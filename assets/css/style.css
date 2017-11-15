@@ -1,0 +1,36 @@
+
+* {
+    color:yellow;
+}
+
+
+body {
+    background-image:url("../images/nebula.jpg");
+}
+/* I found this image at https://www.hdwallpapers.in/walls/nebula_planets-wide.jpg */
+
+h1 {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#rules {
+    background-color:gray;
+
+}
+
+#results {
+    margin:15px;
+}
+
+#randomplace {
+    background-color: rgb(7, 90, 116);
+    margin:15px;
+    height:100px;
+}
+
+#scoreplace {
+    background-color: rgb(73, 170, 73);
+    margin:15px;
+    height:100px;
+}   
