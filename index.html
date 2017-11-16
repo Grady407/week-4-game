@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <title>Krystal Kollector</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/javascript/game.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -20,15 +20,15 @@
             </div>
             <div class="col-xs-6">
 
-            </div>
+            </div> 
         </div>
         <div class="row">
             <div id="rules" class="col-xs-6">
                 <h1>Instructions</h1>
                 <p>You will be given a random number at the start of the game.</p>
-                <p>There are four krystals below. By clicking on a crystal you will add a specific amount of points to your
+                <p>There are four krystals below. By clicking on a krystal, you will add a specific amount of points to your
                     total score.</p>
-                <p>*You win the game by matching your total score to a random number.*</p>
+                <p>*You win the game by matching your total score to the random number.*</p>
                 <p>You lose the game if your total score goes above the random number.</p>
                 <p>The value of each krystal is hidden from you until you click on it.</p>
                 <p>Each time when the game starts, the game will change the values of each krystal.</p>
@@ -39,15 +39,19 @@
 
         </div>
         <div id="results" class="row">
-            <div id="randomplace" class="col-xs-2">
-                <p>Random Number</p>
+            <div id="randomplace" class="col-sm-2">
+                <h4>Random Number</h4>
+                <h1 id="randomplace2"></h1>
             </div>
-            <div id="scoreplace" class="col-xs-3">
-                <p>Wins: 0</p>
-                <br>
-                <p>Losses: 0</p>
+            <div id="scoreplace1" class="col-sm-2">
+                <h4>Wins</h4>
+                <h1 id="wins">0</h1>
             </div>
-            <div class="col-xs-7">
+            <div id="scoreplace2" class="col-sm-2">
+                    <h4>Losses</h4>
+                    <h1 id="losses">0</h1>
+            </div>
+            <div class="col-sm-6">
 
             </div>
 
@@ -55,32 +59,32 @@
         <div class="row">
             <!-- The images came from http://pngimg.com/ for free! -->
             <div class="col-xs-2">
-                <img src="assets/images/diamond1.png" alt="diamond" height=100px width =100px>
+                <img class="crystal diamond1" value = "" src="assets/images/diamond1.png" height=100px width =100px>
 
             </div>
             <div class="col-xs-2">
-                    <img src="assets/images/emerald1.png" alt="emerald" height=75px width =100px>
+                    <img class="crystal emerald1" value = "" src="assets/images/emerald1.png" height=75px width =100px>
 
             </div>
             <div class="col-xs-2">
-                    <img src="assets/images/ruby1.png" alt="ruby" height=75px width =100px>
+                    <img class="crystal ruby1" value = "" src="assets/images/ruby1.png" height=75px width =100px>
 
             </div>
             <div class="col-xs-2">
-                    <img src="assets/images/sapphire1.png" alt="sapphire" height=75px width =100px>
+                    <img class="crystal sapphire1" value = "" src="assets/images/sapphire1.png" height=75px width =100px>
 
             </div>
             <div class="col-xs-4">
 
             </div>
-
+ 
         </div>
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-md-4">
                 <h2>Your Total Score Is:</h2>
             </div>
-            <div class="col-xs-2">
-                <h2 id="scoredisplay">0</h2>
+            <div class="col-md-2">
+                <h2 id="scoredisplay"></h2>
             </div>
              <div class="col-xs-6">
 

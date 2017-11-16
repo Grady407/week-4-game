@@ -21,6 +21,7 @@ h1 {
 
 #results {
     margin:15px;
+    
 }
 
 #randomplace {
@@ -29,8 +30,14 @@ h1 {
     height:100px;
 }
 
-#scoreplace {
+#scoreplace1 {
     background-color: rgb(73, 170, 73);
+    margin:15px;
+    height:100px;
+}   
+
+#scoreplace2 {
+    background-color: rgb(223, 56, 14);
     margin:15px;
     height:100px;
 }   
