@@ -2,70 +2,76 @@ $(document).ready(function () {
 
 
 
-    var computerpick = Math.floor(Math.random() * 101) + 19;
-    var diamond1 = Math.floor(Math.random() * 12) + 1;
-    var emerald1 = Math.floor(Math.random() * 12) + 1;
-    var ruby1 = Math.floor(Math.random() * 12) + 1;
-    var sapphire1 = Math.floor(Math.random() * 12) + 1;
-    var start = 0;
-    var scored = 0;
-    var wins = 0;
-    var losses = 0;
+    let scored;
+    let start = 0;
+    let wins = 0;
+    let losses = 0;
 
-    var reset = false;
+    
+    function startGame() {
+    kryst = (0*this.value);
+    let scored =0;
+      computerpick = Math.floor(Math.random() * 101) + 19;
+
+      diamond1 = Math.floor(Math.random() * 12) + 1;
+      emerald1 = Math.floor(Math.random() * 12) + 1;
+      ruby1 = Math.floor(Math.random() * 12) + 1;
+      sapphire1 = Math.floor(Math.random() * 12) + 1;
+
+
+     $(".diamond1").val(diamond1);
+     $(".emerald1").val(emerald1);
+     $(".ruby1").val(ruby1);
+     $(".sapphire1").val(sapphire1);
+    
+     $("#randomplace2").text(computerpick);
+     $("#scoredisplay").text(start);
+    }
+
+
+
+    startGame();
 
     console.log(computerpick);
     console.log(diamond1);
     console.log(emerald1);
     console.log(ruby1);
     console.log(sapphire1);
+    
 
-
-    $(".diamond1").val(diamond1);
-    $(".emerald1").val(emerald1);
-    $(".ruby1").val(ruby1);
-    $(".sapphire1").val(sapphire1);
-
-    $("#randomplace2").text(computerpick);
-    $("#scoredisplay").text(start);
 
 
     $(".crystal").on("click", function () {
-
-        var scored = (start += parseInt(this.value))
+        kryst = parseInt(this.value);
+        console.log(this.value);
+        scored = (start += kryst)
         $("#scoredisplay").text(scored);
-
-        if (reset != true) {
+    
 
             if (computerpick === scored) {
+                startGame();
                 wins++;
                 $("#wins").text(wins);
-                scored = 0;
-                // $("#scoredisplay").text(scored);
-                // computerpick = Math.floor(Math.random() * 101) + 19;
-                // $("#randomplace2").text(computerpick);
-                // reset = true;
+                scored=0;
+                startGame();
             }
 
             if (scored > computerpick) {
+                startGame();
                 losses++;
                 $("#losses").text(losses);
-                scored = 0;
-                // $("#scoredisplay").text(scored);
-                // computerpick = Math.floor(Math.random() * 101) + 19;
-                // $("#randomplace2").text(computerpick);
-                // reset = true;
- 
+                scored=0;
+                startGame();
             } 
            
-
-        }
+        });
+        
       
 
 
 
 
-    });
+   
 
 
 });
