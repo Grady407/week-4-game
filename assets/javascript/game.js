@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 
 
 
@@ -7,10 +7,11 @@ $(document).ready(function () {
     let wins = 0;
     let losses = 0;
 
+
     
     function startGame() {
-    kryst = (0*this.value);
-    let scored =0;
+    
+    
       computerpick = Math.floor(Math.random() * 101) + 19;
 
       diamond1 = Math.floor(Math.random() * 12) + 1;
@@ -39,29 +40,45 @@ $(document).ready(function () {
     console.log(sapphire1);
     
 
-
+    var totalz = [];
 
     $(".crystal").on("click", function () {
-        kryst = parseInt(this.value);
-        console.log(this.value);
-        scored = (start += kryst)
-        $("#scoredisplay").text(scored);
+
+
+    
+kryst = parseInt(this.value);
+console.log(kryst);
+totalz.push(kryst);
+console.log(totalz);
+
+scored = totalz.reduce(function(a,b){
+    return a+b; 
+});
+
+console.log(scored);
+$("#scoredisplay").text(scored);
+
+        // var scored = (start += parseInt(this.value))
+
+        // $("#scoredisplay").text(scored);
     
 
             if (computerpick === scored) {
-                startGame();
                 wins++;
                 $("#wins").text(wins);
-                scored=0;
+                totalz=[];
+                console.log("hey" +this.value);
                 startGame();
+            
             }
 
             if (scored > computerpick) {
-                startGame();
                 losses++;
                 $("#losses").text(losses);
-                scored=0;
+                totalz=[];
+                console.log("nay"+this.value);
                 startGame();
+                
             } 
            
         });
@@ -74,7 +91,7 @@ $(document).ready(function () {
    
 
 
-});
+
 
 
 
@@ -82,3 +99,26 @@ $(document).ready(function () {
 // I could not get the game to reset successfully.
 // I was able to get somethings to reset but then the game would not work as intended.
 // **************************************************************
+
+
+// function addit(x,y){
+//     let x = scored;
+//     let y = this.value;
+//     let scored= x+y;
+// }
+
+// addit(scored)
+
+// var totalz = [];
+// kryst = parseInt(this.value)
+// totalz.push(kryst);
+
+// totalz.reduce(function(a,b){
+//     scored= a+b; 
+//     $("#scoredisplay").text(scored);
+// })
+
+
+// for (i=0; i<totalz.length; i++){
+//     var summedup = (0+=totalz[i]);
+// }
